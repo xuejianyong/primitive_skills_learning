@@ -1,31 +1,22 @@
-# MAPLE: Augmenting Reinforcement Learning with Behavior Primitives for Diverse Manipulation Tasks
+# Augmenting flexibility and autonomy of intellegent robots with Behavior Primitives for Diverse Manipulation Tasks
 
-This is the official codebase for **Ma**nipulation **P**rimitive-augmented reinforcement **Le**arning (MAPLE), from the following paper:
-
-**Augmenting Reinforcement Learning with Behavior Primitives for Diverse Manipulation Tasks**
-<br> [Soroush Nasiriany](http://snasiriany.me/), [Huihan Liu](https://huihanl.github.io/), [Yuke Zhu](https://www.cs.utexas.edu/~yukez/) 
-<br> [UT Austin Robot Perception and Learning Lab](https://rpl.cs.utexas.edu/)
-<br> IEEE International Conference on Robotics and Automation (ICRA), 2022
-<br> **[[Paper]](https://arxiv.org/abs/2110.03655)**&nbsp;**[[Project Website]](https://ut-austin-rpl.github.io/maple/)**
-
-<!-- ![alt text](https://github.com/UT-Austin-RPL/maple/blob/web/src/overview.png) -->
-<a href="https://ut-austin-rpl.github.io/maple/" target="_blank"><img src="https://github.com/UT-Austin-RPL/maple/blob/web/src/overview.png" width="90%" /></a>
+This is the codebase for learning primitive skills and a try of reusing them with cognitive archiectures for enabling the robots with capabilities of adaptability and flexibility in new environment and tasks.
 
 This guide contains information about (1) [Installation](#installation), (2) [Running Experiments](#running-experiments), (3) [Setting Up Your Own Environments](#setting-up-your-own-environments), (4) [Acknowledgement](#acknowledgement), and (5) [Citation](#citation).
 
 ## Installation
 ### Download code
-- Current codebase: ```git clone https://github.com/UT-Austin-RPL/maple```
+- Current codebase: ```git clone https://github.com/xuejianyong/primitive_skills_learning```
 - (for environments) the `maple` branch in robosuite: ```git clone -b maple https://github.com/ARISE-Initiative/robosuite```
 
 ### Setup robosuite 
-1. Download MuJoCo 2.0 (Linux and Mac OS X) and unzip its contents into `~/.mujoco/mujoco200`, and copy your MuJoCo license key `~/.mujoco/mjkey.txt`. You can obtain a license key from [here](https://www.roboti.us/license.html).
+1. Download [MuJoCo 2.0](https://gist.github.com/ellisbrown/47bfd3e524aed11216cd3c0a0872a654) (Linux and Mac OS X) and unzip its contents into `~/.mujoco/mujoco200`, and copy your MuJoCo license key `~/.mujoco/mjkey.txt`. You can obtain a license key from [here](https://www.roboti.us/license.html).
 2. (linux) Setup additional dependencies: ```sudo apt install libgl1-mesa-dev libgl1-mesa-glx libglew-dev libosmesa6-dev software-properties-common net-tools xpra xserver-xorg-dev libglfw3-dev patchelf```
 3. Add MuJoCo to library paths: `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin`
 
 ### Setup conda environment
-1. Create the conda environment: `conda env create --name maple --file=maple.yml`
-2. (if above fails) edit `maple.yml` to modify dependencies and then resume setup: `conda env update --name maple --file=maple.yml`
+1. Create the conda environment: `conda env create --name ppl --file=maple.yml`
+2. (if above fails) edit `ppl.yml` to modify dependencies and then resume setup: `conda env update --name maple --file=maple.yml`
 3. Activate the conda environment: `conda activate maple`
 4. Finish maple setup: (in your maple repo path do) `pip install -e .`
 5. Finish robosuite setup: (in your robosuite repo path do) `pip install -e .`
@@ -73,11 +64,3 @@ Much of this codebase is directly based on [RLkit](https://github.com/vitchyr/rl
 In addition, the environments were developed as a forked branch of [robosuite](https://github.com/ARISE-Initiative/robosuite) `v1.1.0`.
 
 ## Citation
-```bibtex
-@inproceedings{nasiriany2022maple,
-   title={Augmenting Reinforcement Learning with Behavior Primitives for Diverse Manipulation Tasks},
-   author={Soroush Nasiriany and Huihan Liu and Yuke Zhu},
-   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-   year={2022}
-}
-```
